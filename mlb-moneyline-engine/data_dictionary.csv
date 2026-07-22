@@ -1,0 +1,47 @@
+field_name,signal_family,definition,role,collection_method,source
+starting_pitcher_siera,Starting-pitcher projection,Pregame SIERA,core,automated later,FanGraphs/derived
+starting_pitcher_xfip,Starting-pitcher projection,Pregame xFIP,core,automated later,FanGraphs/derived
+starting_pitcher_xera,Starting-pitcher projection,Pregame Statcast xERA,core,automated later,Baseball Savant
+starting_pitcher_k_minus_bb_pct,Starting-pitcher projection,K% minus BB%,core,automated later,FanGraphs/derived
+starting_pitcher_pitching_plus,Starting-pitcher projection,Pitching+ estimate,core,source-dependent,FanGraphs/licensed feed
+starting_pitcher_expected_ip,Starting-pitcher projection,Expected innings today,core,model later,derived
+starting_pitcher_velocity_change,Starting-pitcher projection,Recent velocity versus baseline,supporting,automated later,Baseball Savant
+starting_pitcher_personal_record,Starting-pitcher projection,Pitcher W-L record,supporting,manual/automated,MLB
+team_record_in_starter_games,Starting-pitcher projection,Team record in pitcher starts,supporting,derived later,MLB game logs
+starter_run_support,Starting-pitcher projection,Average offensive support,supporting,derived later,game logs
+starter_matchup_projected_kbb,Starter-versus-confirmed-lineup matchup,Projected K-BB% against exact nine,core,model later,derived
+starter_matchup_xwoba_allowed,Starter-versus-confirmed-lineup matchup,Projected xwOBA allowed,core,model later,derived
+pitch_arsenal_fit,Starter-versus-confirmed-lineup matchup,Usage-weighted pitch-type matchup residual,candidate,model later,Baseball Savant/derived
+platoon_matchup,Starter-versus-confirmed-lineup matchup,Handedness interaction,core,automated later,derived
+confirmed_lineup_wrc_plus,Confirmed-lineup strength and lineup shock,PA-weighted projected wRC+,core,automated later,FanGraphs/derived
+confirmed_lineup_xwoba,Confirmed-lineup strength and lineup shock,PA-weighted projected xwOBA,core,automated later,Baseball Savant/derived
+lineup_change_runs,Confirmed-lineup strength and lineup shock,Expected-to-confirmed lineup run change,core,model later,derived
+missing_regulars,Confirmed-lineup strength and lineup shock,Missing expected starters,core,manual initially,official lineup
+starting_catcher,Confirmed-lineup strength and lineup shock,Confirmed catcher,core,manual initially,official lineup
+bullpen_top3_availability,High-leverage bullpen asymmetry,Availability of top leverage arms,core,manual initially,game logs/news
+bullpen_pitch_count_1d,High-leverage bullpen asymmetry,Top reliever pitches yesterday,core,automated later,MLB game logs
+bullpen_pitch_count_3d,High-leverage bullpen asymmetry,Top reliever pitches over three days,core,automated later,MLB game logs
+bullpen_consecutive_days,High-leverage bullpen asymmetry,Consecutive usage days,core,automated later,MLB game logs
+bullpen_xfip,High-leverage bullpen asymmetry,Pregame bullpen xFIP,core,automated later,FanGraphs/derived
+expected_bullpen_ip,High-leverage bullpen asymmetry,Projected bullpen innings,core,model later,derived
+catcher_framing_runs,"Catching, baserunning, and hidden runs",Pregame catcher framing,candidate,automated later,Baseball Savant
+catcher_blocking_runs,"Catching, baserunning, and hidden runs",Pregame blocking value,candidate,automated later,Baseball Savant
+catcher_throwing_runs,"Catching, baserunning, and hidden runs",Pregame throwing value,candidate,automated later,Baseball Savant
+team_baserunning_runs,"Catching, baserunning, and hidden runs",Pregame baserunning value,candidate,automated later,FanGraphs/derived
+stolen_base_matchup,"Catching, baserunning, and hidden runs",Runner aggression versus battery,candidate,model later,derived
+starter_groundball_pct,Batted-ball and defensive interaction,Starter groundball rate,core interaction,automated later,FanGraphs/Savant
+starter_flyball_pct,Batted-ball and defensive interaction,Starter flyball rate,core interaction,automated later,FanGraphs/Savant
+lineup_pull_spray_profile,Batted-ball and defensive interaction,Confirmed lineup spray profile,candidate,model later,Baseball Savant/derived
+infield_oaa_matchup,Batted-ball and defensive interaction,Position-specific infield OAA exposure,core interaction,automated later,Baseball Savant
+outfield_oaa_matchup,Batted-ball and defensive interaction,Position-specific outfield OAA exposure,core interaction,automated later,Baseball Savant
+home_field,Situational and roster context,Home-team status,supporting,automated,schedule
+travel_rest_delta,Situational and roster context,Rest/travel advantage,candidate,derived later,schedule
+roster_availability_runs,Situational and roster context,Run impact of unavailable players,core candidate,manual/model later,roster/news
+workload_restriction,Situational and roster context,Known pitcher restriction,core candidate,manual initially,team reports
+asymmetric_park_fit,Situational and roster context,Park benefit difference,candidate,model later,Baseball Savant/derived
+opening_no_vig_probability,Market baseline,Opening probability after removing vig,mandatory baseline,automated,The Odds API
+current_no_vig_probability,Price gate,Current probability after removing vig,mandatory gate,automated,The Odds API
+current_executable_odds,Price gate,Actual available price,mandatory gate,automated/manual,sportsbook/API
+reverse_line_movement,Market context,Line movement against public direction,context only,source-dependent,bet splits provider
+closing_line_value,Evaluation,Price obtained versus close,evaluation,historical odds later,odds archive
+game_result,Evaluation,Binary winner label,target,automated later,MLB
