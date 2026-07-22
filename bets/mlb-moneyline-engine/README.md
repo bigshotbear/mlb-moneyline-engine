@@ -1,84 +1,70 @@
-# MLB Moneyline Engine
+# MLB Moneyline Engine — Version 2
 
-This is the first working data-collection version of the MLB moneyline project.
+Version 2 removes almost all daily manual entry.
 
-## Included now
+## Automatic now
 
-- Live MLB moneylines from The Odds API
-- Two-way no-vig probability calculations
-- Best returned price for each side
-- Probable pitchers when available
-- Manual confirmed-lineup entry
-- Manual bullpen-availability entry
-- Seven signal-family research structure
-- Timestamped JSON snapshots
-- Data dictionary with 40+ planned fields
-- Recommendations disabled until validation
+- MLB moneylines and no-vig probabilities
+- Probable pitchers
+- Pitcher season W-L record, ERA, WHIP, starts, innings, strikeouts, and walks
+- Official starting lineups after MLB posts them
+- Bullpen pitch and inning workload over the previous three days
+- Reliever-level workload and consecutive-day use
+- Timestamped snapshots
+- Optional permanent Supabase storage
 
-## Critical security step
+## Still manual only for unusual information
 
-The API key shown in your screenshot should be rotated before use.
+- Announced reliever unavailability
+- Injuries or soreness
+- Pitch-count restrictions
+- Late scratches
+- Manager comments
 
-Never upload `.streamlit/secrets.toml` to GitHub.
+## Update the current GitHub repository
 
-## Upload to your private GitHub repository
+Your repository contains a nested `mlb-moneyline-engine` folder.
 
-1. Download and extract the ZIP.
-2. Open the private repository you created.
-3. Click **Add file**.
-4. Click **Upload files**.
-5. Drag every extracted file and folder into GitHub.
-6. Commit the upload.
+1. Extract the ZIP.
+2. Open the existing `mlb-moneyline-engine` folder inside GitHub.
+3. Choose **Add file → Upload files**.
+4. Upload the contents of the extracted `mlb-moneyline-engine` folder.
+5. Commit the replacements.
+6. Render should auto-deploy.
 
-## Run locally
+## Permanent Supabase storage
 
-Install Python 3.11 or newer, then:
+1. In Supabase, open **SQL Editor → New query**.
+2. Paste and run `supabase/setup.sql`.
+3. In Render Environment, add:
 
-```bash
-python -m venv .venv
+```text
+SUPABASE_URL
+SUPABASE_SERVICE_ROLE_KEY
 ```
 
-Windows:
+Never put the service-role key in GitHub or chat.
 
-```powershell
-.venv\Scripts\Activate.ps1
+## Existing Render settings
+
+Root directory:
+
+```text
+mlb-moneyline-engine
 ```
 
-Install:
+Build command:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml` and put
-your newly rotated key in it.
-
-Start:
+Start command:
 
 ```bash
-streamlit run app.py
+streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
 ```
 
-## Deploy with Streamlit Community Cloud
+## Limitation
 
-1. Connect Streamlit to GitHub.
-2. Select this private repository.
-3. Main file: `app.py`
-4. In Advanced settings → Secrets, enter:
-
-```toml
-ODDS_API_KEY = "YOUR_NEW_ROTATED_KEY"
-```
-
-5. Deploy.
-
-## Test calculations
-
-```bash
-pytest
-```
-
-## Important limitation
-
-This is not yet a trained betting model. It is the clean collection and
-snapshot layer needed before historical backtesting and probability fitting.
+The app still produces no official bet recommendation. The next phase is historical feature construction and walk-forward validation.

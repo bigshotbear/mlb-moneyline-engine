@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 MODEL_STATUS = {
-    "stage": "DATA-COLLECTION MVP",
+    "stage": "AUTOMATED DATA-COLLECTION MVP",
     "recommendations_enabled": False,
     "reason": (
-        "The model has not been trained or walk-forward validated. "
-        "This version records clean pregame snapshots and does not convert "
-        "signal counts into fabricated win probabilities."
+        "Lineups, pitcher records, and bullpen workload are now automated, "
+        "but the model has not been trained or walk-forward validated."
     ),
 }
 

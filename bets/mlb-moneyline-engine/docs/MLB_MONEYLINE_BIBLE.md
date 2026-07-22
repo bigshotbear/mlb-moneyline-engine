@@ -1,24 +1,14 @@
 # MLB Moneyline Engine — Research Bible
 
-## Mission
+## Version 2 automation
 
-Build a moneyline-only research tool that starts from the sportsbook's no-vig
-market probability, measures new and asymmetric matchup information, and outputs
-a calibrated win probability only after historical validation.
-
-## Non-negotiable rules
-
-1. AI agreement is a working hypothesis, not validation.
-2. Do not fabricate correlations, coefficients, win rates, VIFs, thresholds, or confidence bands.
-3. Related statistics belong in signal families so they do not receive duplicate votes.
-4. Opening no-vig market probability is the prior, not a predictive pillar.
-5. Current price is a separate decision gate.
-6. Reverse line movement is context, not an analytical vote.
-7. CLV matters, but validation also includes calibration, Brier score, log loss,
-   out-of-sample EV/ROI, sample size, and uncertainty.
-8. Historical features must be frozen at the true pregame timestamp.
-9. An 11-1 record is supporting context, not an automatic trigger.
-10. Many raw inputs may be used without treating them as independent signals.
+- Official MLB lineup detection after lineups are posted
+- Probable-pitcher IDs and current season records
+- Current ERA, WHIP, starts, innings, strikeouts, and walks
+- Team bullpen workload over the previous three days
+- Reliever-level workload and consecutive-day use
+- Optional permanent Supabase storage
+- Manual entry reduced to unusual late-news overrides
 
 ## Seven provisional signal families
 
@@ -30,20 +20,9 @@ a calibrated win probability only after historical validation.
 6. Batted-ball and defensive interaction
 7. Situational and roster context
 
-## Outside the seven
+## Rules
 
-- Opening no-vig probability: market baseline
-- Current no-vig probability: comparison point
-- Expected value: decision output
-- Reverse line movement: market context
-- Closing line value: evaluation
-- Final result: target
-- Unit size: undefined until validation
-
-## Current build
-
-The application collects live MLB moneylines, calculates no-vig market
-probabilities, loads probable pitchers when available, accepts manually verified
-lineups and bullpen status, and saves timestamped snapshots.
-
-It intentionally produces no official betting recommendation.
+- No fabricated thresholds, coefficients, win rates, or confidence bands.
+- An 11-1 pitcher record is supporting evidence, not a standalone trigger.
+- Bullpen workload does not automatically prove a reliever is unavailable.
+- No recommendations until calibration, CLV, Brier/log loss, and out-of-sample profitability are evaluated.

@@ -1,7 +1,13 @@
 {
   "project": "MLB Moneyline Engine",
-  "build_stage": "Data-collection MVP",
-  "created_at_utc": "2026-07-22T16:10:47.419138+00:00",
+  "version": "2.0",
+  "build_stage": "Automated data-collection MVP",
+  "created_at_utc": "2026-07-22T17:15:42.711108+00:00",
   "recommendations_enabled": false,
-  "data_dictionary_fields": 46
+  "features": [
+    "official lineup automation",
+    "pitcher season record automation",
+    "three-day bullpen workload automation",
+    "optional Supabase persistence"
+  ]
 }
