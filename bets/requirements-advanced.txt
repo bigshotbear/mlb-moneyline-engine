@@ -1,0 +1,5 @@
+-r requirements.txt
+pybaseball>=2.2.7,<3
+duckdb>=1.1,<2
+pyarrow>=17,<22
+scikit-learn>=1.5,<2
