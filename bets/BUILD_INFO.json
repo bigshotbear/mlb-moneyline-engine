@@ -1,0 +1,15 @@
+{
+  "project": "MLB Moneyline Engine",
+  "version": "8.0",
+  "stage": "Best Bets and Live Center",
+  "created_at_utc": "2026-07-22T20:06:36.403116+00:00",
+  "recommendations_enabled": false,
+  "pages": [
+    "Best Bets",
+    "Matchup Lab",
+    "Live Center",
+    "Parlays"
+  ],
+  "live_refresh_seconds": 20,
+  "odds_refresh": "manual"
+}
