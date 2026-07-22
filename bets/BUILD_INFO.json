@@ -1,0 +1,13 @@
+{
+  "project": "MLB Moneyline Engine",
+  "version": "5.0",
+  "stage": "Matchup command center",
+  "created_at_utc": "2026-07-22T18:46:04.408716+00:00",
+  "recommendations_enabled": false,
+  "views": [
+    "Scorecard",
+    "Eye Test",
+    "Who Wins",
+    "Game Details"
+  ]
+}
